@@ -10,6 +10,8 @@
     - путь к файлу, например `C:\data\`
 - Нажимаем кнопку `EXCEL → JSON` → получаем файл `C:\data\data.json`
 
+<img src="https://raw.githubusercontent.com/akzhar/vba-excel-to-json/main/demo.gif" alt="demo" title="demo" width="100%"/>
+
 ## Правила хранения данных в Excel
 
 - Корневым JSON объектом / массивом объектов является страница ROOT
