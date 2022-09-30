@@ -10,7 +10,9 @@ Data stored as tables in Excel is converted by a VBA macro to JSON format.
 - Specify 2 options on the `Instruction` worksheet:
   - name of the file eg. `data.json`
   - path to save the file eg. `C:\data\`
-- Press `EXCEL → JSON` button and thats is!
+- Press `EXCEL → JSON` button and that's it!
+
+## Demo
 
 <img src="https://raw.githubusercontent.com/akzhar/vba-excel-to-json/main/demo.gif" alt="demo" title="demo" width="100%"/>
 
@@ -28,7 +30,7 @@ Data stored as tables in Excel is converted by a VBA macro to JSON format.
   <li>1 worksheet (table) = 1 object / array of objects
     <ul>
       <li>if there is only 1 row <b>it's an object</b></li>
-      <li>if there is > 1 row <b>it's an array of objects</b></li>
+      <li>if there are more than 1 row <b>it's an array of objects</b></li>
     </ul>
   </li>
   <li>Every cells in the tables could contain one of the following:
@@ -36,22 +38,23 @@ Data stored as tables in Excel is converted by a VBA macro to JSON format.
       <li>Any text value (the JSON format stores all values as strings)</li>
       <li>Array of text values:
         <ul>
-          <li>use the square brackets to identify an array <code>[ ... ]</code></li>
-          <li>inside the brackets the array items goes separated by comma <code>[ item1 , item2 , item3 ]</code></li>
+          <li>use the square brackets to identify an array → <code>[ ... ]</code></li>
+          <li>inside the brackets the array items goes separated by comma → <code>[ item1 , item2 , item3 ]</code></li>
         </ul>
       </li>
       <li>Another object / array of objects:
         <ul>
-          <li>use the curly brackets to identify an object <code>{ ... }</code></li>
+          <li>use the curly brackets to identify an object → <code>{ ... }</code></li>
           <li>in fact, this is a link to another worksheet (see section 3)</li>
-          <li>inside the brackets write the name of the worksheet, which rows will be converted to objects <code>{ worksheet name }</code></li>
+          <li>inside the brackets put worksheet's name → <code>{ worksheet name }</code></li>
+          <li>every row from specified worksheet will be converted to an object</li>
         </ul>
       </li>
     </ul>
   </li>
   <li>Limitations:
     <ul>
-      <li>put an array of text values inside another array currently <u>is not supported</u> → <code>[ item1 , [ ... ] , item3 ]</code></li>
+      <li>directly nested arrays currently <b>is not supported</b> → <code>[ item1 , [ ... ] , item3 ]</code></li>
       <li>it's OK to put an object inside an array → <code>[ { ... } ]</code></li>
     </ul>
   </li>
